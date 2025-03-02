@@ -27,4 +27,7 @@ Things you may want to cover:
 
 ```
 rails new rrrello --css=postcss --javascript=esbuild --database=postgresql
+bundle add slim-rails
+bin/rails g scaffold board title:string
+bin/rails db:migrate
 ```
