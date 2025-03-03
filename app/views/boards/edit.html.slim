@@ -1,6 +1,7 @@
 h1 Editing board
 
-== render "form", board: @board
+= turbo_frame_tag @board do
+  == render "form", board: @board
 
 br
 

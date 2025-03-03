@@ -3,7 +3,7 @@ class BoardsController < ApplicationController
 
   # GET /boards or /boards.json
   def index
-    @boards = Board.all
+    @boards = Board.ordered
   end
 
   # GET /boards/1 or /boards/1.json
@@ -27,6 +27,7 @@ class BoardsController < ApplicationController
       if @board.save
         format.html { redirect_to @board, notice: "Board was successfully created." }
         format.json { render :show, status: :created, location: @board }
+        format.turbo_stream
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @board.errors, status: :unprocessable_entity }

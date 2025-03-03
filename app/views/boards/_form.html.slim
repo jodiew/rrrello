@@ -11,4 +11,9 @@
     = form.text_field :title
 
   div
+    - if board.new_record?
+      = link_to "Cancel", boards_path
+    - else
+      = link_to "Cancel", board_path
+    
     = form.submit

@@ -30,4 +30,5 @@ rails new rrrello --css=postcss --javascript=esbuild --database=postgresql
 bundle add slim-rails
 bin/rails g scaffold board title:string
 bin/rails db:migrate
+bin/rails db:fixtures:load
 ```

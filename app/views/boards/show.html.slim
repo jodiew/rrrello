@@ -1,10 +1,12 @@
-p style="color: green" = notice
+= link_to "Back to boards", boards_path
 
-== render @board
+= turbo_frame_tag @board do
 
-div
-  => link_to "Edit this board", edit_board_path(@board)
-  '|
-  =< link_to "Back to boards", boards_path
+  p style="color: green" = notice
 
-  = button_to "Destroy this board", @board, method: :delete
+  h1 = @board.title
+
+  div
+    = link_to "Edit this board", edit_board_path(@board)
+
+    = button_to "Destroy this board", @board, method: :delete, data: { turbo_frame: "_top" }

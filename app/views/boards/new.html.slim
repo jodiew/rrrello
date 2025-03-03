@@ -1,6 +1,7 @@
 h1 New board
 
-== render "form", board: @board
+= turbo_frame_tag @board
+  == render "form", board: @board
 
 br
 
